@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Blockly Sample App</title>
+
+  <!-- ✅ Load Blockly locally -->
+<script src="blockly/blockly_compressed.js"></script>
+<script src="blockly/javascript_compressed.js"></script>
+<script src="blockly/blocks_compressed.js"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: sans-serif;
+    }
+
+    /* ✅ Top Bar */
+    #topBar {
+      height: 50px;
+      background-color: #222;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      box-sizing: border-box;
+      font-size: 18px;
+    }
+
+    /* ✅ Existing layout */
+    #pageContainer {
+      display: flex;
+      height: calc(100vh - 50px); /* Adjust height due to top bar */
+    }
+
+    #outputPane {
+      width: 30%;
+      padding: 10px;
+      background-color: #f4f4f4;
+      box-sizing: border-box;
+      overflow: auto;
+    }
+
+    #blocklyDiv {
+      flex: 1;
+      height: 100%;
+    }
+
+    pre {
+      background: #eaeaea;
+      padding: 10px;
+      overflow: auto;
+    }
+
+    button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ New Top Bar -->
+  <div id="topBar">RocketMod Testing Branch!</div>
+
+  <!-- ✅ Your Exact Layout (unchanged) -->
+  <div id="pageContainer">
+    <div id="outputPane">
+      <pre id="generatedCode"><code></code></pre>
+      <div id="output"></div>
+    </div>
+    <div id="blocklyDiv"></div>
+  </div>
+
+  <!-- ✅ Blockly Toolbox -->
+  <xml id="toolbox" style="display: none">
+    <block type="controls_if"></block>
+    <block type="logic_compare"></block>
+    <block type="math_number"></block>
+    <block type="math_arithmetic"></block>
+    <block type="text"></block>
+    <block type="text_print"></block>
+  </xml>
+
+  <!-- ✅ Blockly Initialization Script -->
+  <script>
+    const workspace = Blockly.inject('blocklyDiv', {
+      toolbox: document.getElementById('toolbox')
+    });
+
+    workspace.addChangeListener(() => {
+      const code = Blockly.JavaScript.workspaceToCode(workspace);
+      document.getElementById('generatedCode').textContent = code;
+    });
+
+    function runCode() {
+      const code = Blockly.JavaScript.workspaceToCode(workspace);
+      document.getElementById('output').innerHTML = '';
+      try {
+        eval(code);
+      } catch (e) {
+        document.getElementById('output').innerText = 'Error: ' + e;
+      }
+    }
+
+    // Optional: Redirect console.log to output pane
+    (function() {
+      const originalLog = console.log;
+      console.log = function(msg) {
+        originalLog(msg);
+        const outputDiv = document.getElementById('output');
+        outputDiv.innerHTML += msg + '<br>';
+      };
+    })();
+  </script>
+
+</body>
+</html>
