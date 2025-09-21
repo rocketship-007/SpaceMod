@@ -1,13 +1,14 @@
 {
   "name": "hi",
   "version": "1.0.0",
+  "homepage": "https://rocketship-007.github.io/SpaceMod",
   "description": "A sample app using Blockly",
   "main": "index.js",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "start": "webpack serve --open --mode development"
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "blockly"
@@ -16,6 +17,7 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "css-loader": "^6.7.1",
+    "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.5.0",
     "source-map-loader": "^4.0.1",
     "style-loader": "^3.3.1",
