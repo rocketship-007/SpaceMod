@@ -1,1 +1,80 @@
-<!doctype html><html><head><meta charset="utf-8"/><title>Space Mod Beta 0.1</title><script defer="defer" src="bundle.js"></script></head><body><div id="pageContainer"><div id="outputPane"><pre id="generatedCode"><code></code></pre><div id="output"></div></div><div id="blocklyDiv"></div></div></body></html>
+<!doctype html><html><head><meta charset="utf-8"/><title>Space Mod Beta 0.1</title><style>body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background-color: #ffffff; /* Body background to white */
+        color: #000000; /* Body text to black for contrast */
+      }
+      #futuristicTopbar {
+        width: 100%;
+        background: linear-gradient(90deg, #1f2a3a 0%, #0d1117 100%);
+        border-bottom: 2px solid #36506c;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      }
+      #futuristicTopbar h1 {
+        margin: 0;
+        font-size: 1.5em;
+        color: #7fffd4;
+        text-shadow: 0 0 10px #7fffd4;
+        letter-spacing: 2px;
+      }
+      #futuristicTopbar .nav-links {
+        display: flex;
+        gap: 20px;
+      }
+      #futuristicTopbar .nav-links a {
+        color: #a3b2c6;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+      }
+      #futuristicTopbar .nav-links a:hover {
+        color: #ffffff;
+        text-shadow: 0 0 5px #ffffff;
+      }
+      #pageContainer {
+        display: flex;
+        height: calc(100vh - 60px); /* Adjust height to account for the top bar */
+      }
+      #outputPane {
+        width: 50%;
+        padding: 20px;
+        border-right: 1px solid #c0c0c0; /* Lighter border color for white background */
+        box-sizing: border-box;
+        overflow-y: auto;
+      }
+      #blocklyDiv {
+        width: 50%;
+        height: 100%;
+        background-color: #f0f0f0; /* Blockly area to a light grey */
+      }
+      #generatedCode {
+        background-color: #f0f0f0; /* Code block to light grey */
+        border: 1px solid #d0d0d0; /* Lighter border */
+        padding: 15px;
+        border-radius: 8px;
+        font-family: 'Courier New', Courier, monospace;
+        color: #000000; /* Code text to black */
+        white-space: pre-wrap;
+        max-height: 40%;
+        overflow-y: auto;
+      }
+      #output {
+        margin-top: 20px;
+        background-color: #f0f0f0; /* Output block to light grey */
+        border: 1px solid #d0d0d0; /* Lighter border */
+        padding: 15px;
+        border-radius: 8px;
+        color: #000000; /* Output text to black */
+        font-family: monospace;
+      }
+      /* Ensure Blockly elements are visible on a light background */
+      .blocklySvg .blocklyToolboxCategoryLabel {
+        fill: #000000 !important;
+      }
+      .blocklyToolboxCategory {
+        color: #000000 !important;
+      }</style><script defer="defer" src="bundle.js"></script></head><body><div id="futuristicTopbar"><h1>Space Mod Beta 0.1</h1><div class="nav-links"></div></div><div id="pageContainer"><div id="outputPane"><pre id="generatedCode"><code></code></pre><div id="output"></div></div><div id="blocklyDiv"></div></div></body></html>
